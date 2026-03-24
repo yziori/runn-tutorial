@@ -42,3 +42,13 @@ steps:
       current.res.status == 200
       // 正しい記事のIDで取得できること
       && steps.showSecondArticle.res.body.article.id == steps.listArticles.res.body.articles[1].id
+
+# map形式にすることで previous はほぼ使うことはなくなるが、current はステップ名変更の影響を受けなくすることができるので積極的に使うと良い
+# --verbose オプションを使用することでステップの詳細・結果をわかりやすく表示することができる。
+
+# === ステップに名前をつけてフローを追いやすくする (day09/maps.yml)
+#     --- 指定された件数分、記事一覧を取得する (listArticles) ... ok
+#     --- 1番目の記事の詳細を取得します (showFirstArticle) ... ok
+#     --- 2番目の記事の詳細を取得します (showSecondArticle) ... ok
+
+# 1 scenario, 0 skipped, 0 failures
