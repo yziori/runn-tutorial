@@ -1,0 +1,11 @@
+desc: Descriptionをつけて見やすくしましょう
+runners:
+  req: http://zenn.dev # HTTP runner。http or https
+steps:
+  - desc: 'katzumiの記事一覧を取得します'
+    # リクエスト送信部分
+    req: # 上で定義したエンドポイント。
+      /api/articles?username=katzumi&order=latest: # リクエストのパス
+        get: # HTTP メソッド
+          body: # メソッドの下階層にリクエスト内容を定義する。今回はrequest body。
+            application/json: null
